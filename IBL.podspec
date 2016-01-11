@@ -81,7 +81,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "git@github.com:simpossible/IBL.git", :commit => "76b7d4ae6bee94cbbb7bea1e0fa63f0c9c93a814" }
+  s.source       = { :git => "https://github.com/simpossible/IBL.git", :tag => "0.2.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
