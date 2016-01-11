@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A47C87BC1C434BDC003970E4 /* IBL.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A47C87BB1C434BDC003970E4 /* IBL.h */; };
-		A47C87BE1C434BDC003970E4 /* IBL.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C87BD1C434BDC003970E4 /* IBL.m */; };
 		A47C87CC1C43523C003970E4 /* IBLMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C87CB1C43523C003970E4 /* IBLMenuBar.m */; };
 		A47C87CF1C43524F003970E4 /* IBLPopver.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C87CE1C43524F003970E4 /* IBLPopver.m */; };
 		A47C87D51C435512003970E4 /* IBLCellHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C87D21C435512003970E4 /* IBLCellHandler.m */; };
@@ -22,7 +20,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				A47C87BC1C434BDC003970E4 /* IBL.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30,8 +27,6 @@
 
 /* Begin PBXFileReference section */
 		A47C87B81C434BDC003970E4 /* libIBL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIBL.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A47C87BB1C434BDC003970E4 /* IBL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IBL.h; path = ../IBL.h; sourceTree = "<group>"; };
-		A47C87BD1C434BDC003970E4 /* IBL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBL.m; sourceTree = "<group>"; };
 		A47C87CA1C43523C003970E4 /* IBLMenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLMenuBar.h; sourceTree = "<group>"; };
 		A47C87CB1C43523C003970E4 /* IBLMenuBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBLMenuBar.m; sourceTree = "<group>"; };
 		A47C87CD1C43524F003970E4 /* IBLPopver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLPopver.h; sourceTree = "<group>"; };
@@ -40,6 +35,7 @@
 		A47C87D21C435512003970E4 /* IBLCellHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBLCellHandler.m; sourceTree = "<group>"; };
 		A47C87D31C435512003970E4 /* IBLPoverViewCellHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLPoverViewCellHandler.h; sourceTree = "<group>"; };
 		A47C87D41C435512003970E4 /* IBLPoverViewCellHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBLPoverViewCellHandler.m; sourceTree = "<group>"; };
+		A47C87D71C43AA60003970E4 /* IBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBL.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +70,6 @@
 			children = (
 				A47C87C71C43510C003970E4 /* include */,
 				A47C87C41C4350FA003970E4 /* src */,
-				A47C87BD1C434BDC003970E4 /* IBL.m */,
 			);
 			path = IBL;
 			sourceTree = "<group>";
@@ -110,7 +105,7 @@
 		A47C87C71C43510C003970E4 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				A47C87BB1C434BDC003970E4 /* IBL.h */,
+				A47C87D71C43AA60003970E4 /* IBL.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -187,7 +182,6 @@
 				A47C87CF1C43524F003970E4 /* IBLPopver.m in Sources */,
 				A47C87D61C435512003970E4 /* IBLPoverViewCellHandler.m in Sources */,
 				A47C87D51C435512003970E4 /* IBLCellHandler.m in Sources */,
-				A47C87BE1C434BDC003970E4 /* IBL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

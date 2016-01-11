@@ -92,7 +92,7 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"pover clicked in row %ld",(long)indexPath.row);
+    NSLog(@"ibl pover clicked in row %ld",(long)indexPath.row);
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
     [self.delegate poverClickAtIndex:indexPath.row];
     [self.delegate poverDisapper];
@@ -109,7 +109,6 @@
 -(void)setTouchUnEnableInRow:(NSInteger)row{
     NSIndexPath *index = [NSIndexPath indexPathForRow:row inSection:0];
     IBLPoverViewCell *cell =(IBLPoverViewCell*)[self.poverTableView cellForRowAtIndexPath:index];
-    [cell setUnEnable];;
 }
 
 
