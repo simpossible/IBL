@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A47C87BC1C434BDC003970E4 /* IBL.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A47C87BB1C434BDC003970E4 /* IBL.h */; };
+		A47C87BE1C434BDC003970E4 /* IBL.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C87BD1C434BDC003970E4 /* IBL.m */; };
+		A47C87CC1C43523C003970E4 /* IBLMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C87CB1C43523C003970E4 /* IBLMenuBar.m */; };
+		A47C87CF1C43524F003970E4 /* IBLPopver.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C87CE1C43524F003970E4 /* IBLPopver.m */; };
+		A47C87D51C435512003970E4 /* IBLCellHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C87D21C435512003970E4 /* IBLCellHandler.m */; };
+		A47C87D61C435512003970E4 /* IBLPoverViewCellHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A47C87D41C435512003970E4 /* IBLPoverViewCellHandler.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A47C87B61C434BDC003970E4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				A47C87BC1C434BDC003970E4 /* IBL.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A47C87B81C434BDC003970E4 /* libIBL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIBL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47C87BB1C434BDC003970E4 /* IBL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IBL.h; path = ../IBL.h; sourceTree = "<group>"; };
+		A47C87BD1C434BDC003970E4 /* IBL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBL.m; sourceTree = "<group>"; };
+		A47C87CA1C43523C003970E4 /* IBLMenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLMenuBar.h; sourceTree = "<group>"; };
+		A47C87CB1C43523C003970E4 /* IBLMenuBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBLMenuBar.m; sourceTree = "<group>"; };
+		A47C87CD1C43524F003970E4 /* IBLPopver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLPopver.h; sourceTree = "<group>"; };
+		A47C87CE1C43524F003970E4 /* IBLPopver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBLPopver.m; sourceTree = "<group>"; };
+		A47C87D11C435512003970E4 /* IBLCellHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLCellHandler.h; sourceTree = "<group>"; };
+		A47C87D21C435512003970E4 /* IBLCellHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBLCellHandler.m; sourceTree = "<group>"; };
+		A47C87D31C435512003970E4 /* IBLPoverViewCellHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLPoverViewCellHandler.h; sourceTree = "<group>"; };
+		A47C87D41C435512003970E4 /* IBLPoverViewCellHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBLPoverViewCellHandler.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A47C87B51C434BDC003970E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A47C87AF1C434BDC003970E4 = {
+			isa = PBXGroup;
+			children = (
+				A47C87BA1C434BDC003970E4 /* IBL */,
+				A47C87B91C434BDC003970E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A47C87B91C434BDC003970E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A47C87B81C434BDC003970E4 /* libIBL.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A47C87BA1C434BDC003970E4 /* IBL */ = {
+			isa = PBXGroup;
+			children = (
+				A47C87C71C43510C003970E4 /* include */,
+				A47C87C41C4350FA003970E4 /* src */,
+				A47C87BD1C434BDC003970E4 /* IBL.m */,
+			);
+			path = IBL;
+			sourceTree = "<group>";
+		};
+		A47C87C41C4350FA003970E4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A47C87D01C435451003970E4 /* cells */,
+				A47C87C51C4350FA003970E4 /* menubar */,
+				A47C87C61C4350FA003970E4 /* popover */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A47C87C51C4350FA003970E4 /* menubar */ = {
+			isa = PBXGroup;
+			children = (
+				A47C87CA1C43523C003970E4 /* IBLMenuBar.h */,
+				A47C87CB1C43523C003970E4 /* IBLMenuBar.m */,
+			);
+			path = menubar;
+			sourceTree = "<group>";
+		};
+		A47C87C61C4350FA003970E4 /* popover */ = {
+			isa = PBXGroup;
+			children = (
+				A47C87CD1C43524F003970E4 /* IBLPopver.h */,
+				A47C87CE1C43524F003970E4 /* IBLPopver.m */,
+			);
+			path = popover;
+			sourceTree = "<group>";
+		};
+		A47C87C71C43510C003970E4 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A47C87BB1C434BDC003970E4 /* IBL.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A47C87D01C435451003970E4 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				A47C87D11C435512003970E4 /* IBLCellHandler.h */,
+				A47C87D21C435512003970E4 /* IBLCellHandler.m */,
+				A47C87D31C435512003970E4 /* IBLPoverViewCellHandler.h */,
+				A47C87D41C435512003970E4 /* IBLPoverViewCellHandler.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A47C87B71C434BDC003970E4 /* IBL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A47C87C11C434BDC003970E4 /* Build configuration list for PBXNativeTarget "IBL" */;
+			buildPhases = (
+				A47C87B41C434BDC003970E4 /* Sources */,
+				A47C87B51C434BDC003970E4 /* Frameworks */,
+				A47C87B61C434BDC003970E4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IBL;
+			productName = IBL;
+			productReference = A47C87B81C434BDC003970E4 /* libIBL.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A47C87B01C434BDC003970E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = simpossible;
+				TargetAttributes = {
+					A47C87B71C434BDC003970E4 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = MHZFCBBQ75;
+					};
+				};
+			};
+			buildConfigurationList = A47C87B31C434BDC003970E4 /* Build configuration list for PBXProject "IBL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A47C87AF1C434BDC003970E4;
+			productRefGroup = A47C87B91C434BDC003970E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A47C87B71C434BDC003970E4 /* IBL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A47C87B41C434BDC003970E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A47C87CC1C43523C003970E4 /* IBLMenuBar.m in Sources */,
+				A47C87CF1C43524F003970E4 /* IBLPopver.m in Sources */,
+				A47C87D61C435512003970E4 /* IBLPoverViewCellHandler.m in Sources */,
+				A47C87D51C435512003970E4 /* IBLCellHandler.m in Sources */,
+				A47C87BE1C434BDC003970E4 /* IBL.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A47C87BF1C434BDC003970E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A47C87C01C434BDC003970E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A47C87C21C434BDC003970E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A47C87C31C434BDC003970E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A47C87B31C434BDC003970E4 /* Build configuration list for PBXProject "IBL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A47C87BF1C434BDC003970E4 /* Debug */,
+				A47C87C01C434BDC003970E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A47C87C11C434BDC003970E4 /* Build configuration list for PBXNativeTarget "IBL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A47C87C21C434BDC003970E4 /* Debug */,
+				A47C87C31C434BDC003970E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A47C87B01C434BDC003970E4 /* Project object */;
+}
