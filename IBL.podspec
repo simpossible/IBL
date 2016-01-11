@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "IBL"
-  s.version      = "0.1.1"
+  s.version      = "0.1.3"
   s.summary      = "a library with menubar and popover witch use a simple way to realize."
 
   # This description is used to generate tags and improve search results.
