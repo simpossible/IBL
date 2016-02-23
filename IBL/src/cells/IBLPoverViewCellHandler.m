@@ -29,9 +29,14 @@
 
 
 @interface IBLPoverViewCell ()
-@property(nonatomic,strong)UILabel * stringLabel;
+@property(nonatomic, strong)UILabel * stringLabel;
 
-@property(nonatomic,copy)NSString * itemStr;
+@property(nonatomic, copy)NSString * itemStr;
+
+@property(nonatomic, copy)NSString * imagename;
+
+@property(nonatomic, strong)UIImageView * iconView;
+
 
 @end
 
@@ -40,7 +45,10 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier params:(NSDictionary*)dic{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         NSString *item = [dic objectForKey:@"itemStr"];
+        NSString *imagename = dic[@"imageName"];
+        
         self.itemStr = item;
+        self.imagename = imagename;
     }
     
     [self initUI];
@@ -51,28 +59,53 @@
 -(void)initUI{
     self.stringLabel = [[UILabel alloc]init];
     [self.stringLabel setText:self.itemStr];
+    
+    
+    UIImage *icon = [UIImage imageNamed:self.imagename];
+    self.iconView = [[UIImageView alloc]initWithImage:icon];
+    [self.iconView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.contentView addSubview:self.iconView];
+    
 }
 
 -(void)cellLayout{
     
     UILabel *strLabel = self.stringLabel;
+    UIView * contentV = self.contentView;
+    
     [strLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.contentView addSubview:strLabel];
     
-    UIView * contentV = self.contentView;
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(strLabel,contentV);
-    NSString * itemFormat = @"H:|-30-[strLabel]";
+    NSDictionary *views = NSDictionaryOfVariableBindings(strLabel,contentV,_iconView);
     
-    NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:strLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contentV attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:1];
+    float iconWidth = 20;
+    float iconHeight = 20;
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:itemFormat options:NSLayoutFormatAlignAllCenterY metrics:nil views:views]];
-    [self.contentView addConstraint:centerY];
-
+    //图片地址是否为空
+    if (![self.imagename isEqualToString:@""]) {
+        iconWidth = 20;
+    }else{
+        iconWidth = 0;
+    }
+    
+    NSDictionary *metric = @{@"iconWidth":@(iconWidth),@"iconHeight":@(iconHeight)};
+    
+    NSString * itemFormat = @"H:|-5-[_iconView(==iconWidth)]-[strLabel]";
+    
+    NSString * imageFormateV = @"V:|-4-[_iconView(==iconHeight)]";  ///< 多了一个与下边界的约束 导致报警高
+    
+    
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:imageFormateV options:NSLayoutFormatAlignAllCenterY metrics:metric views:views]];
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:itemFormat options:NSLayoutFormatAlignAllCenterY metrics:metric views:views]];
     
 }
 
+-(void)setUnEnable{
+    //    [self.coverView setHidden:NO];
+}
 -(void)setEnable{
+    //    [self.coverView setHidden:YES];
 }
 
 @end

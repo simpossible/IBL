@@ -113,7 +113,7 @@
 }
 
 #pragma mark 外部布局接口 -
-- (void)setPositionWithRightMargin:(float)left{
+- (void)setPositionWithLeftMargin:(float)left{
     _rightMargin = left;
     [self drawRect:self.bounds];
 }
@@ -163,12 +163,15 @@
         NSString *image;
         if (self.images) {
             image  = (NSString *)[self.images objectAtIndex:indexPath.row];
-        }else
-            image = @"";
-        MeetingCellHandler *handler = [[MeetingCellHandler alloc]init];
-        [handler linkNext];
-        cell = [handler getCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:string parms:@{@"type":@(MeetingCellHanlerTypePover),@"itemStr":item,@"imageName":image}];
-    }
+        }else{
+        
+        }
+//            image = @"";
+//        MeetingCellHandler *handler = [[MeetingCellHandler alloc]init];
+//        [handler linkNext];
+//        cell = [handler getCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:string parms:@{@"type":@(MeetingCellHanlerTypePover),@"itemStr":item,@"imageName":image}];
+            
+            }
     return cell;
 }
 
@@ -195,6 +198,7 @@
 -(void)setTouchUnEnableInRow:(NSInteger)row{
     NSIndexPath *index = [NSIndexPath indexPathForRow:row inSection:0];
     IBLPoverViewCell *cell =(IBLPoverViewCell*)[self.poverTableView cellForRowAtIndexPath:index];
+
 }
 
 
