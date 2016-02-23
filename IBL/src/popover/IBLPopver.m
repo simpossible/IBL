@@ -20,7 +20,25 @@
 @property(nonatomic, assign)float popoverWidth;
 
 @property(nonatomic, assign)float popverHeight;
+
+@property(nonatomic, assign)float triangleHeight;
+
+@property(nonatomic, assign)float trianglePercent;
+
+@property(nonatomic, assign)float leftMargin;
+
+@property(nonatomic, assign)float rightMargin;
+
+@property(nonatomic, assign)float tableWidth;
+
+@property(nonatomic, strong)CAShapeLayer * triangleLayer;
+
+@property(nonatomic, strong)NSMutableArray * images; //图片名称们
+
+@property(nonatomic, strong)NSArray * horizonConstrains;
+
 @end
+
 
 
 @implementation IBLPopver
@@ -28,42 +46,101 @@
 
 -(instancetype)initWithTableWidth:(float)width andItems:(NSArray *)items{
     if (self = [super init]) {
-        self.backgroundColor = [UIColor colorWithRed:0.3 green:0.4 blue:0.5 alpha:0.2];
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+        
+        _triangleHeight = 10;
+        self.trianglePercent = 0.68;
+        _rightMargin = 0;
+        _width = width;
     }
     self.dataArray = items;
+    
     [self initialPoverViewWithWidth:width];
-    [self addTriangleAtPoint:68];
+    [self addTriangleAtPoint:width*_trianglePercent];
+    
     return self;
 }
 
-#pragma mark UI初始化________________________________________
+- (instancetype)initWithTableWidth:(float)width andItems:(NSArray*)items andImageNames:(NSArray*)images{
+    if (self = [super init]) {
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
+        
+        _triangleHeight = 10;
+        self.trianglePercent = 0.68;
+        _rightMargin = 0;
+        _width = width;
+    }
+    self.dataArray = items;
+    self.images = [NSMutableArray arrayWithArray:images];
+    
+    [self initialPoverViewWithWidth:width];
+    [self addTriangleAtPoint:width*_trianglePercent];
+    
+    return self;
+}
+
+#pragma mark UI初始化 -
 -(void)initialPoverTabviewWithFrame:(CGRect)frame{
     self.poverTableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     [self.poverTableView setDelegate:self];
     [self.poverTableView setDataSource:self];
     [self.poverTableView setBackgroundColor:[UIColor whiteColor]];
+    [[self.poverTableView layer]setCornerRadius:2];
     [self.poverTableView setScrollEnabled:NO];
 }
 
 
 -(void)initialPoverViewWithWidth:(float)width{
     self.poverView = [[UIView alloc]init];
-    float heigth = self.dataArray.count *30 +10;
+    float heigth = self.dataArray.count *30 +_triangleHeight;
     
     _popoverWidth = width;
     _popverHeight = heigth;
     
     CGRect rect = CGRectMake(0, 0, width, heigth);
     [self.poverView setBounds:rect];
-    [self initialPoverTabviewWithFrame:CGRectMake(0, 10, width, heigth-10)];
+    
+    
+    [self initialPoverTabviewWithFrame:CGRectMake(0, _triangleHeight, width, heigth-_triangleHeight)];
     [self.poverView setClipsToBounds:YES];
     [self.poverView addSubview:self.poverTableView];
 }
 
-#pragma mark disapper
--(void)CancelPover{
-    self.hidden = YES;
+//重置table的size
+- (void)resetTableFrame{
+    float heigth = self.dataArray.count *30 +_triangleHeight;
+    [self.poverTableView setFrame:CGRectMake(0, _triangleHeight, _popoverWidth, heigth-_triangleHeight)];
 }
+
+#pragma mark 外部布局接口 -
+- (void)setPositionWithRightMargin:(float)left{
+    _rightMargin = left;
+    [self drawRect:self.bounds];
+}
+
+- (void)setTriangleHeight:(float)height{
+    if (height>0) {
+        _triangleHeight = height;
+    }
+    [self resetTableFrame];
+    if (self.triangleLayer) {
+        [self.triangleLayer removeFromSuperlayer];
+        self.triangleLayer = nil;
+    }
+    [self addTriangleAtPoint:_trianglePercent*_popoverWidth];
+    [self drawRect:self.bounds];
+}
+
+- (void)setTrianglePersent:(float)persent{
+    if (persent>1 || persent< 0) {
+        return;
+    }
+    _trianglePercent = persent;
+    [self addTriangleAtPoint:persent*_popoverWidth];
+    [self drawRect:self.bounds];
+}
+
+#pragma mark disapper -
 
 
 #pragma mark tableviewDelegate________________________________________________________
@@ -81,20 +158,29 @@
     NSString *string = @"poperCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:string];
     if (!cell) {
-        //        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:string];
         NSString *item = (NSString *)[self.dataArray objectAtIndex:indexPath.row];
-        IBLCellHandler *handler = [[IBLCellHandler alloc]init];
+        
+        NSString *image;
+        if (self.images) {
+            image  = (NSString *)[self.images objectAtIndex:indexPath.row];
+        }else
+            image = @"";
+        MeetingCellHandler *handler = [[MeetingCellHandler alloc]init];
         [handler linkNext];
-        cell = [handler getCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:string parms:@{@"type":@(IBLCellHanlerTypePover),@"itemStr":item}];
+        cell = [handler getCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:string parms:@{@"type":@(MeetingCellHanlerTypePover),@"itemStr":item,@"imageName":image}];
     }
     return cell;
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"ibl pover clicked in row %ld",(long)indexPath.row);
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
-    [self.delegate poverClickAtIndex:indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(popover:clickAtIndex:)]) {
+        [self.delegate popover:self clickAtIndex:indexPath.row];
+    }
+    if ([self.delegate respondsToSelector:@selector(poverClickAtIndex:)]) {
+        [self.delegate poverClickAtIndex:indexPath.row];
+    }
     [self.delegate poverDisapper];
     [self removeFromSuperview];
 }
