@@ -16,5 +16,7 @@
 @interface IBLPoverViewCell : UITableViewCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier params:(NSDictionary*)dic;
 
+- (void)setParams:(NSDictionary*)dic;
+
 -(void)setEnable;
 @end
