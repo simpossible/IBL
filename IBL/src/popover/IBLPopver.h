@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger,PositionStyle){
 
 @property(nonatomic, weak)id<MeetPopoverDelegate>    delegate;
 
-@property(nonatomic, assign)NSInteger itemHeight;///< 每一条的item的高度
+@property(nonatomic, assign, setter=setItemHeight:)NSInteger itemHeight;///< 每一条的item的高度
 
 
 /**popover的高度*/

@@ -27,7 +27,7 @@
 - (instancetype)initWithItems:(NSArray*)items andControllers:(NSArray *)controllers andHeight:(float)height;
 
 /**
- *param添加viewController
+ *@param添加viewController
  */
 - (void)addMenuWithController:(UIViewController*)controller andMenuName:(NSString*)name;
 

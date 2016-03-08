@@ -254,5 +254,13 @@
     [self.poverView.layer addSublayer:trangleLayer];
 }
 
-
+//重写设置方法
+- (void)setItemHeight:(NSInteger)height {
+    if (height > 0) {
+        _itemHeight = height;
+        if (self.superview) {
+            [self.poverTableView reloadData];
+        }
+    }
+}
 @end
