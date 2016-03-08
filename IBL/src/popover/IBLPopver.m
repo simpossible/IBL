@@ -47,10 +47,7 @@
 -(instancetype)initWithTableWidth:(float)width andItems:(NSArray *)items{
     if (self = [super init]) {
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
-        
-        _triangleHeight = 10;
-        self.trianglePercent = 0.68;
-        _rightMargin = 0;
+        [self initialDatas];
         _width = width;
     }
     self.dataArray = items;
@@ -64,11 +61,9 @@
 - (instancetype)initWithTableWidth:(float)width andItems:(NSArray*)items andImageNames:(NSArray*)images{
     if (self = [super init]) {
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4];
-        
-        _triangleHeight = 10;
-        self.trianglePercent = 0.68;
-        _rightMargin = 0;
         _width = width;
+        [self initialDatas];
+       
     }
     self.dataArray = items;
     self.images = [NSMutableArray arrayWithArray:images];
@@ -79,8 +74,15 @@
     return self;
 }
 
+- (void)initialDatas {
+    _triangleHeight = 10;
+    self.trianglePercent = 0.68;
+    _rightMargin = 0;
+    _itemHeight = 44;//默认值
+}
+
 #pragma mark UI初始化 -
--(void)initialPoverTabviewWithFrame:(CGRect)frame{
+-(void)initialPoverTabviewWithFrame:(CGRect)frame {
     self.poverTableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     [self.poverTableView setDelegate:self];
     [self.poverTableView setDataSource:self];
@@ -145,7 +147,7 @@
 
 #pragma mark tableviewDelegate________________________________________________________
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 30;
+    return self.itemHeight;
 }
 
 
@@ -164,14 +166,12 @@
         if (self.images) {
             image  = (NSString *)[self.images objectAtIndex:indexPath.row];
         }else{
-        
+            image = @"";
+            IBLPoverViewCellHandler *handler = [[IBLPoverViewCellHandler alloc]init];
+            [handler linkNext];
+            cell = [handler getCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:string parms:@{@"type":@(IBLCellHanlerTypePover),@"itemStr":item,@"imageName":image}];
         }
-//            image = @"";
-//        MeetingCellHandler *handler = [[MeetingCellHandler alloc]init];
-//        [handler linkNext];
-//        cell = [handler getCellWithStyle:UITableViewCellStyleDefault reuseIdentifier:string parms:@{@"type":@(MeetingCellHanlerTypePover),@"itemStr":item,@"imageName":image}];
-            
-            }
+    }
     return cell;
 }
 

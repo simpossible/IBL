@@ -25,9 +25,13 @@ typedef NS_ENUM(NSInteger,PositionStyle){
 -(void)poverDisapper;
 @end
 
+
 @interface IBLPopver : UIView
 
 @property(nonatomic, weak)id<MeetPopoverDelegate>    delegate;
+
+@property(nonatomic, assign)NSInteger itemHeight;///< 每一条的item的高度
+
 
 /**popover的高度*/
 @property(nonatomic, assign)float   width;
